@@ -1,7 +1,8 @@
-﻿const express = require('express');
+const express = require('express');
 const mongoose = require('mongoose');
 const dns = require('dns');
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 // Ensure SRV records for MongoDB Atlas resolve cleanly on Windows
 try {
@@ -83,3 +84,4 @@ if (require.main === module) {
 }
 
 module.exports = app;
+
